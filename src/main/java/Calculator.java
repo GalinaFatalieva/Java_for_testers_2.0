@@ -42,6 +42,7 @@ public class Calculator {
             b = in.nextDouble();
         } catch(InputMismatchException exc) {
             System.err.println("Вводите числа, для разделения целой и дробной части используйте запятую");
+            exc.printStackTrace();
             System.exit(0);
         }
         return new double [] {a, b};
@@ -138,14 +139,21 @@ public class Calculator {
     /**
      * Этот метод деления
      * Ввывод значения
+     *
+     * Сделано исключение деления на ноль уловием if
      */
     static void division(){
 
         double [] num = inputNum();
 
-        double res = num[0] / num[1];
+       if (num[1] == 0){
+           System.err.println("Делить на ноль нельзя");
+           System.exit(0);
+       }
 
-        System.out.printf("Частное %f и %f равно %.4f", num[0], num[1], res);
+       double res = num[0] / num[1];
+       System.out.printf("Частное %f и %f равно %.4f", num[0], num[1], res);
+
     }
 
 }
