@@ -1,3 +1,5 @@
+package task4;
+
 /* Массив размерностью 20, заполняется случайными целыми числами от -10 до 10.
 Найти максимальный отрицательный и минимальный положительный элементы массива.
 Поменять их местами. */
@@ -5,9 +7,11 @@
 
 public class ArrayMaxMin {
 
+
     /**
-     * метод создает и заполняет массив случайными целыми числами от -10 до 10 НЕ влючительно.
+     * метод создает и заполняет массив случайными целыми числами от -10 до 10 НЕ включительно.
      * если надо включительно 19 строка: array[i] = (int) (Math.random() * 22 - 11);
+     *
      * @return заполненный массив
      */
     public static int[] getRandom() {
@@ -40,14 +44,15 @@ public class ArrayMaxMin {
             output[1][i] = array[i];
         }
 
-// ввывод
+// вывод
 
         System.out.println("\nПервая строка номер элемент, вторая - элемент соответственно");
 
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < array.length; j++) {
 
-                if (output[i][j] < 10 && output[i][j] >=0) System.out.print("|  " + output[i][j] + " "); // добовление пробела для однозначных цифр
+                if (output[i][j] < 10 && output[i][j] >= 0)
+                    System.out.print("|  " + output[i][j] + " "); // добавление пробела для однозначных цифр
                 else System.out.print("| " + output[i][j] + " ");
             }
             System.out.println();
@@ -59,7 +64,7 @@ public class ArrayMaxMin {
      *
      * @param array заполненый массив
      */
-    public static void searchMaxMin(int[] array) {
+    public static int[] searchMaxMin(int[] array) {
 
         int max = array[0];
         int min = array[0];
@@ -67,60 +72,45 @@ public class ArrayMaxMin {
         for (int i = 1; i < array.length; i++) {
 
             if (array[i] >= 1) {
-                if (max < 0 || max > array[i]) max = array[i];
-            } else if (array[i] < 1 && array[i] < min ) min = array[i];
+                if (max <= 0 || max > array[i]) max = array[i];
+            } else if (array[i] < 0 && array[i] < min) min = array[i];
         }
-
-// Вывод max и min обработатывая исключения все "0" и если нет отрицатльных или положительных значений
-
-        if (min == 0) {
-            System.err.println("Ноль не является ни положительным, ни отрицательным");
-            System.exit(0);
-        } else if (min > 0){
-            System.out.println("минимальный положительный элемент = " + max );
-            System.err.println("Отрицательных цисел нет");
-            System.exit(0);
-        }else if (max < 0) {
-            System.err.println("Положительных цисел нет");
-            System.out.println("максимальный отрицательный элемент = " + min );
-            System.exit(0);
-        }
-        else {
-            System.out.println("минимальный положительный элемент = " + max );
-            System.out.println("максимальный отрицательный элемент = " + min );
-        }
-
-
-        change(array, max, min);
+        return new int[] {max, min};
     }
 
     /**
-     * метод меняет местами минимальный положительный и максимальный отрицательный эменты
+     * Вывод max и min обрабатывая исключения все "0" и если нет отрицательных или положительных значений
      *
-     * @param array заполненый массив
-     * @param max минимальный положительный элемент
      * @param min максимальный отрицательный элемент
+     * @param max минимальный положительный элемент
      */
-    public static void change(int[] array, int max, int min){
+    public static void withdraw(int min, int max) throws RangeOfValuesException, IfNoNegative, IfNoPositive{
 
-        for (int i = 0; i < array.length; i++){
+        if (min == 0) {
+            throw new RangeOfValuesException ();
+        } else if (min > 0) {
+            throw new IfNoNegative (max);
+        } else if (max < 1) {
+            throw new IfNoPositive (min);
+        } else {
+        System.out.println("минимальный положительный элемент = " + max);
+        System.out.println("максимальный отрицательный элемент = " + min);
+    }
+}
+
+    /**
+     * метод меняет местами минимальный положительный и максимальный отрицательный элементы
+     *
+     * @param array заполненный массив
+     * @param max   минимальный положительный элемент
+     * @param min   максимальный отрицательный элемент
+     */
+    public static void change(int[] array, int max, int min) {
+
+        for (int i = 0; i < array.length; i++) {
             if (array[i] == max) array[i] = min;
             else if (array[i] == min) array[i] = max;
         }
-
-        output(array);
     }
 
-
-    public static void run(){
-
-        int[] array = getRandom();
-
-        output(array);
-
-        System.out.println();
-
-        searchMaxMin(array);
-
-    }
 }
