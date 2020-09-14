@@ -1,40 +1,56 @@
-import task4.ArrayMaxMin;
-import task4.IfNoNegative;
-import task4.IfNoPositive;
-import task4.RangeOfValuesException;
+import org.w3c.dom.ls.LSOutput;
+import present.JellyBeans;
+import present.Lollypop;
+import present.Marshmallow;
+import present.Sweets;
 
 public class Base {
 
     public static void main(String[] args) {
 
-        ArrayMaxMin maxMin = new ArrayMaxMin();
+        Lollypop candy = new Lollypop("Chupa-Chups", 12.1, 20, "Чупачупс");
+        JellyBeans candy2 = new JellyBeans("Hubba-Bubba", 97.5, 50.5, "Клубника");
+        Marshmallow candy3 = new Marshmallow("Haribo", 200, 70, "pink");
+
+        Lollypop candy4 = new Lollypop();
+        candy4.setName("Heart");
+        candy4.setWeight(150);
+        candy4.setPrice(63.7);
+        candy4.setNameRus("Сердце");
+
+        JellyBeans candy5 = new JellyBeans(){};
+        candy5.setName("Orbit");
+        candy5.setWeight(25);
+        candy5.setPrice(12);
+        candy5.setTaste("Ice");
+
+        Marshmallow candy6 = new Marshmallow();
+        candy6.setName("Rock Mountain");
+        candy6.setWeight(400);
+        candy6.setPrice(100);
+        candy6.setColour("White");
 
 
-        int[] array = maxMin.getRandom();
-
-        maxMin.output(array);
+        Sweets[] present = {candy, candy2, candy3, candy4, candy5, candy6};
 
         System.out.println();
 
-        int[] min_max = maxMin.searchMaxMin(array);
+        double sumPrice = 0;
+        double sumWeight = 0;
 
-        int min = min_max[1];
-        int max = min_max[0];
+        for (Sweets composition : present){
 
+            double price = composition.getPrice();
+            sumPrice += price;
 
-        try {
-            maxMin.withdraw(min, max);
-        } catch (RangeOfValuesException e) {
-            e.getComparison();
-        } catch (IfNoNegative ifNoNegative) {
-            ifNoNegative.getComparison();
-        } catch (IfNoPositive ifNoPositive) {
-            ifNoPositive.getComparison();
+            double weight = composition.getWeight();
+            sumWeight += weight;
+
+            System.out.println(composition.toString());
         }
 
-
-        maxMin.change(array, max, min);
-
-        maxMin.output(array);
+        System.out.println();
+        System.out.println("Общая цена подарка: " + sumPrice);
+        System.out.println("Общий вес подарка: " + sumWeight);
     }
 }
