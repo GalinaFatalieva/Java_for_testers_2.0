@@ -6,7 +6,14 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class lineSplitting {
+/**
+ * класс 1. Прочитывает слова из файла.
+ *       2. Отсортировывает в алфавитном порядке.
+ *       3. Посчитывает сколько раз каждое слово встречается в файле.
+ *       4. Выводит статистику на консоль
+ */
+
+public class СountingWordsFromFile {
 
     /**
      * Метод
@@ -51,17 +58,16 @@ public class lineSplitting {
         return wordsMap;
     }
 
+    /**
+     * Метод выводит на экран слова и количество раз
+     */
 
     public void output(){
 
-
         Map<String, Integer> strings = redStrings();
-
 
         for (Map.Entry<String, Integer> output : strings.entrySet()) {
             System.out.println("Слово: " + output.getKey() + "  Сколько раз = " + output.getValue());
         }
-
-
     }
 }

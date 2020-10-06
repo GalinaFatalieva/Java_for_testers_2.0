@@ -1,9 +1,12 @@
-package wordStatistics;
+package taskNumber6;
 
 public class Main {
     public static void main(String args[]){
 
-        lineSplitting sor = new lineSplitting();
-        sor.fgg();
+        СountingWordsFromFile count = new СountingWordsFromFile();
+        moreTimes more = new moreTimes();
+        count.output();
+        System.out.println();
+        more.maximumOutput(count.redStrings(), more.maximumRepeat(count.redStrings()));
     }
 }
