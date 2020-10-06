@@ -1,10 +1,10 @@
-package сalculator1;
+package taskNumber5;
 
-import сalculator1.actions.Addition;
-import сalculator1.actions.Division;
-import сalculator1.actions.Multiplication;
-import сalculator1.actions.Subtraction;
-import сalculator1.input.InputAction;
+import taskNumber5.actions.Addition;
+import taskNumber5.actions.Division;
+import taskNumber5.actions.Multiplication;
+import taskNumber5.actions.Subtraction;
+import taskNumber5.input.InputAction;
 
 public class Base {
     public static void main(String args[]) {

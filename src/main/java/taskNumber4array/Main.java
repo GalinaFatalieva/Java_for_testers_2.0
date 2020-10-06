@@ -1,9 +1,9 @@
 package task4;
 
-import arrayTack4.ArrayMaxMin;
-import arrayTack4.IfNoNegative;
-import arrayTack4.IfNoPositive;
-import arrayTack4.RangeOfValuesException;
+import taskNumber4array.ArrayMaxMin;
+import taskNumber4array.IfNoNegative;
+import taskNumber4array.IfNoPositive;
+import taskNumber4array.RangeOfValuesException;
 
 public class Main {
 

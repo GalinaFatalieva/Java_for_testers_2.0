@@ -1,4 +1,4 @@
-package present;
+package taskNumber4present;
 
 /* Формируется новогодний подарок.
 Он может включать в себя разные сладости (Candy, Jellybean, etc.)

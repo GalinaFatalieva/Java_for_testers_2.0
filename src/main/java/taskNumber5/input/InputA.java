@@ -1,4 +1,4 @@
-package сalculator1.input;
+package taskNumber5.input;
 
 /**
  * Класс первого числа, которое передается с консоли

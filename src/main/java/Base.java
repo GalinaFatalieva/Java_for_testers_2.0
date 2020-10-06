@@ -1,8 +1,7 @@
-import org.w3c.dom.ls.LSOutput;
-import present.JellyBeans;
-import present.Lollypop;
-import present.Marshmallow;
-import present.Sweets;
+import taskNumber4present.JellyBeans;
+import taskNumber4present.Lollypop;
+import taskNumber4present.Marshmallow;
+import taskNumber4present.Sweets;
 
 public class Base {
 

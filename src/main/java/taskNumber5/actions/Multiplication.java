@@ -1,4 +1,4 @@
-package сalculator1.actions;
+package taskNumber5.actions;
 
 /**
  * Класс умножения

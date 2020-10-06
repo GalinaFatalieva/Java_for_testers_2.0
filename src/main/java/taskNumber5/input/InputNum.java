@@ -1,4 +1,4 @@
-package сalculator1.input;
+package taskNumber5.input;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

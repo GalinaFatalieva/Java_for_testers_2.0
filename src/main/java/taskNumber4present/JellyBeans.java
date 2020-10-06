@@ -1,4 +1,4 @@
-package present;
+package taskNumber4present;
 
 public class JellyBeans extends Sweets{
 

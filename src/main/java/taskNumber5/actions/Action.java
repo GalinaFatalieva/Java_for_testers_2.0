@@ -1,7 +1,7 @@
-package сalculator1.actions;
+package taskNumber5.actions;
 
-import сalculator1.input.InputA;
-import сalculator1.input.InputB;
+import taskNumber5.input.InputA;
+import taskNumber5.input.InputB;
 
 /**
  * Абстракный класс для классов действий
