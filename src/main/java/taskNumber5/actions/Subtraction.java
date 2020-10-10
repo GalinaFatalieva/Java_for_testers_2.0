@@ -6,17 +6,22 @@ package taskNumber5.actions;
 
 public class Subtraction extends Action {
 
+    private double answer;
 
-    @Override
-    public double calculate() {
-
-        return getActionA() - getActionB();
+    public double getAnswer() {
+        return answer;
     }
 
     @Override
-    public void input() {
+    public void calculate(double a, double b) {
 
-        System.out.printf("Разность %f и %f равна %.4f", getActionA(), getActionB(), calculate());
+        answer = a - b;
+    }
+
+    @Override
+    public void input(double a, double b, double answer) {
+
+        System.out.printf("Разность %f и %f равна %.4f",  a, b, answer);
 
     }
 }

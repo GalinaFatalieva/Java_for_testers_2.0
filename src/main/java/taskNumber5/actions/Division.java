@@ -8,21 +8,25 @@ package taskNumber5.actions;
 
 public class Division extends Action{
 
+    private double answer;
 
-    @Override
-    public double calculate() {
-
-        if (getActionB() == 0){
-            System.err.println("Делить на ноль нельзя");
-            System.exit(0);
-        }
-
-        return getActionA() / getActionB();
+    public double getAnswer() {
+        return answer;
     }
 
     @Override
-    public void input() {
+    public void calculate(double a, double b) {
 
-        System.out.printf("Частное %f и %f равно %.4f", getActionA(), getActionB(), calculate());
+        if (b == 0){
+            System.err.println("Делить на ноль нельзя");
+            System.exit(0);
+        }
+        answer = a / b;
+    }
+
+    @Override
+    public void input(double a, double b, double answer) {
+
+        System.out.printf("Частное %f и %f равно %.4f",  a, b, answer);
     }
 }

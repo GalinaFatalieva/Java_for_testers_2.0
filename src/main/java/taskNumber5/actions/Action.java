@@ -9,30 +9,32 @@ import taskNumber5.input.InputB;
 
 public abstract class Action {
 
-    InputA aa = new InputA();
-    InputB bb = new InputB();
+//    InputA aa = new InputA();
+//    InputB bb = new InputB();
+//
+//
+//    private double actionA = aa.getA(); //Присваиваем actionA значение, которое первым ввели в консоли
+//    private double actionB = bb.getB(); //actionB = второе значение из консоли
+//
+//    public double getActionA() {
+//        return actionA;
+//    }
+//
+//    public double getActionB() {
+//        return actionB;
+//    }
 
-
-    private double actionA = aa.getA(); //Присваиваем actionA значение, которое первым ввели в консоли
-    private double actionB = bb.getB(); //actionB = второе значение из консоли
-
-    public double getActionA() {
-        return actionA;
-    }
-
-    public double getActionB() {
-        return actionB;
-    }
+    private double answer;
 
     /**
      * Арифметическое действие
      * @return Результат арифметического действия
      */
-    public abstract double calculate();
+    public abstract void calculate(double a, double b);
 
     /**
      *Ввод на экран форматированием
      */
-    public abstract void input();
+    public abstract void input(double a, double b, double answer);
 
 }
