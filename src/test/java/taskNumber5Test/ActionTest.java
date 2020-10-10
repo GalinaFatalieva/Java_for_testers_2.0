@@ -3,8 +3,11 @@ package taskNumber5Test;
 import org.junit.Assert;
 import org.junit.Test;
 import taskNumber5.actions.Addition;
+import taskNumber5.actions.Division;
+import taskNumber5.actions.Multiplication;
+import taskNumber5.actions.Subtraction;
 
-public class AdditionTest {
+public class ActionTest {
 
     double aTest = 6;
     double bTest = 1;
@@ -18,23 +21,24 @@ public class AdditionTest {
 
     @Test
     public void subtraction(){
-        Addition subtraction = new Addition();
+        Subtraction subtraction = new Subtraction();
         subtraction.calculate(aTest,bTest);
         Assert.assertEquals("вычетание не правильное",aTest-bTest, subtraction.getAnswer(),0);
     }
 
     @Test
     public void multiplication(){
-        Addition multiplication = new Addition();
+        Multiplication multiplication = new Multiplication();
         multiplication.calculate(aTest,bTest);
         Assert.assertEquals("умножение не правильное",aTest*bTest, multiplication.getAnswer(),0);
     }
 
     @Test
     public void division(){
-        Addition division = new Addition();
+        Division division = new Division();
         division.calculate(aTest,bTest);
         Assert.assertEquals("деление не правильное",aTest/bTest, division.getAnswer(),0);
     }
+
 
 }
